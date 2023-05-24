@@ -6,10 +6,23 @@
 
 <script setup>
 import { ref } from 'vue'
+import socket from '@/socket'
 
 const text = ref('')
 
 const send = () => {
   console.log('send')
+  socket.emit(
+    "createMessage",
+    {
+      text: text.value,
+    },
+    data => {
+      if (typeof data === "string") {
+        console.error(data);
+      } else {
+        this.text = "";
+      }
+    })
 }
 </script>
