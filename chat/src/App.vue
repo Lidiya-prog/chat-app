@@ -7,7 +7,7 @@ import socket from '@/socket'
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  socket.connect()
+  // socket.connect()
 })
 </script>
 
