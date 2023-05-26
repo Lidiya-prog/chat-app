@@ -1,47 +1,26 @@
 <template>
-  <div class="c-wrap">
-    <v-toolbar app>
-      <v-btn @click="exit">
-        Выйти
-      </v-btn>
-      <v-toolbar-title>Чат</v-toolbar-title>
-    </v-toolbar>
-    <div class="c-chat">
-      <Message
-        v-for="m in messages"
-        :key="m.text"
-        :name="m.name"
-        :text="m.text"
-        :owner="m.name === userName"
-      />
-    </div>
-    <div class="c-form">
-      <ChatForm/>
-    </div>
-  </div>
+    <component :is="tab" />
 </template>
 <script setup>
-import Message from '@/components/Message.vue'
-import ChatForm from '@/components/ChatForm.vue'
 import { useRouter } from 'vue-router'
-import { useStore } from 'vuex'
-// import socket from '@/socket'
+import { ref } from 'vue'
+import ChatWebSocket from '@/components/ChatWebSocket'
 
 const router = useRouter()
-const store = useStore()
-const messages = store.getters.getMessages
-const userName = store.getters.getUserName
+const currentRoute = router.currentRoute.value.fullPath
 
-const exit = () => {
-  router.push('/')
-  store.commit('clearData')
-  // socket.disconnect()
-  // socket.emit('leftChat', () => {
-  //   debugger;
-  //
-  // })
+const tab = ref(null)
+
+function getTab () {
+  if (currentRoute === '/ws') {
+    tab.value = ChatWebSocket
+  }
+  if (currentRoute === '/long-polling') {
+    tab.value = ChatWebSocket
+  }
+  tab.value = ChatWebSocket
 }
-
+getTab()
 </script>
 
 <style scoped>

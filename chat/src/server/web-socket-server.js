@@ -17,7 +17,7 @@ io.on('connection', (socket) => {
   console.log('a user connected')
 
   socket.on('createMessage', (data, cb) => {
-    console.log(data)
+    // console.log(data)
     if (!data.text) {
       return cb('Текст не может быть пустым')
     }
@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on('userJoin', (data, cb) => {
-    console.log(data)
+    // console.log(data)
     if (!data) {
       return cb('Имя не может быть пустым')
     }

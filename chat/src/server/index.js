@@ -20,7 +20,7 @@ const PORT = 3000
 
 server.listen(PORT, () => {
   consola.ready({
-    message: `Server listening on http://localhost:${port}`,
+    message: `Server listening on http://localhost:${PORT}`,
     badge: true
   })
 })

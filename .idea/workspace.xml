@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="007a4bb7-10d7-4659-a024-2b14abd6465f" name="Changes" comment="add chat, change components">
-      <change afterPath="$PROJECT_DIR$/chat/src/server/web-socket-server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/App.vue" afterDir="false" />
+    <list default="true" id="007a4bb7-10d7-4659-a024-2b14abd6465f" name="Changes" comment="add server mode">
+      <change afterPath="$PROJECT_DIR$/chat/src/components/ChatWebSocket.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat/src/views/ChatsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/components/ChatForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/ChatWebSocketForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/src/components/LoginForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/LoginForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/components/Message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/Message.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/server/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/src/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/server/web-socket-server.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/web-socket-server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/src/views/ChatView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/views/ChatView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,15 +18,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="add-long-polling" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "last_opened_file_path": "/Users/lidiya/Documents/Программирование/Frontend/chat-app/chat/src/components",
     "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/chat/src/components" />
+      <recent name="$PROJECT_DIR$/chat/src/views" />
+    </key>
+  </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="add server mode">
+      <created>1685100804969</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685100804969</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -33,10 +54,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="add-mode" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add server mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="add server mode" />
   </component>
 </project>
