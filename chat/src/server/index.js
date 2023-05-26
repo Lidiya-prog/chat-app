@@ -1,74 +1,24 @@
 const consola = require('consola')
-const app = require('express')()
-const server = require('http').createServer(app)
-const { Server } = require('socket.io')
-const io = new Server(server, {
-  cors: {
-    origin: 'http://localhost:8081'
-  }
-})
+// const app = require('express')()
 
-const variants = ['Hello', 'Why?', 'How are you?', 'What happened?', 'Are you busy?']
+const args = process.argv.slice(2);
+const test = args.find(arg => arg.startsWith('--mode=')).split('=')[1];
 
-function getRandomArbitrary(min=0, max=4) {
-  return Math.floor(Math.random() * (max - min) + min);
+let mode = 'polling'
+
+if (test === 'long-polling') {
+  mode = 'long-polling'
+} else if (test === 'ws') {
+  mode = 'web-socket'
 }
 
-io.on('connection', (socket) => {
-  console.log('a user connected')
+console.log(`Starting server in ${mode} mode...`)
 
-  socket.on('createMessage', (data, cb) => {
-    console.log(data)
-    if (!data.text) {
-      return cb('Текст не может быть пустым')
-    }
+const server = require(`./${mode}-server.js`);
 
-    io.emit('newMessage', {
-      text: data.text,
-      name: data.name
-    })
-    cb()
+const PORT = 3000
 
-    if (data.text === variants[0]) {
-      socket.emit('newMessage', {
-        text: variants[2]
-      })
-    } else {
-      const num = getRandomArbitrary()
-      socket.emit('newMessage', {
-        text: variants[num]
-      })
-    }
-  })
-
-  socket.on('userJoin', (data, cb) => {
-    console.log(data)
-    if (!data) {
-      return cb('Имя не может быть пустым')
-    }
-
-    cb({ userId: socket.id })
-    socket.emit('newMessage', {
-      text: `Hello ${data}`
-    })
-  })
-  socket.on('leftChat', (cb) => {
-    socket.disconnect()
-    cb()
-    // if (!data) {
-    //   return cb('Имя не может быть пустым')
-    // }
-    //
-    // cb({ userId: socket.id })
-    // socket.emit('newMessage', {
-    //   text: `Hello ${data}`
-    // })
-  })
-})
-
-const port = 3000
-
-server.listen(port, () => {
+server.listen(PORT, () => {
   consola.ready({
     message: `Server listening on http://localhost:${port}`,
     badge: true

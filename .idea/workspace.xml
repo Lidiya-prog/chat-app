@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="007a4bb7-10d7-4659-a024-2b14abd6465f" name="Changes" comment="add chat, change components">
+      <change afterPath="$PROJECT_DIR$/chat/src/server/web-socket-server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/components/LoginForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/LoginForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/components/Message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/Message.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/server/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/views/ChatView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/views/ChatView.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

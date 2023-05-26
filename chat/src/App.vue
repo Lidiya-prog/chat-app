@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import socket from '@/socket'
+// import socket from '@/socket'
 import { onMounted } from 'vue'
 
 onMounted(() => {

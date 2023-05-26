@@ -6,13 +6,13 @@ export default createStore({
       userName: '',
       userId: null,
       messages: []
-    };
+    }
   },
   getters: {
-    getMessages(state) {
+    getMessages (state) {
       return state.messages
     },
-    getUserName(state) {
+    getUserName (state) {
       return state.userName
     }
   },
@@ -24,7 +24,7 @@ export default createStore({
       state.userId = id
     },
     addMessage (state, msg) {
-      state. messages.push(msg)
+      state.messages.push(msg)
     },
     clearData (state) {
       state.userName = ''

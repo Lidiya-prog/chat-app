@@ -30,8 +30,8 @@ const submit = () => {
   socket.connect()
 
   socket.emit('userJoin', userName.value, data => {
-    if (typeof data === "string") {
-      console.error(data);
+    if (typeof data === 'string') {
+      console.error(data)
     } else {
       store.commit('setUser', userName.value)
       store.commit('setUserId', data.userId)

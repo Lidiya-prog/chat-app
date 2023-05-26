@@ -3,9 +3,9 @@
     <div class="wrap">
       <div class="mes" :class="{owner}">
         <small>
-          <strong>{{name}}</strong>
+          <strong>{{props.name}}</strong>
         </small>
-        <p>{{text}}</p>
+        <p>{{props.text}}</p>
       </div>
     </div>
   </div>

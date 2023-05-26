@@ -25,7 +25,7 @@ import Message from '@/components/Message.vue'
 import ChatForm from '@/components/ChatForm.vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-import socket from '@/socket'
+// import socket from '@/socket'
 
 const router = useRouter()
 const store = useStore()
