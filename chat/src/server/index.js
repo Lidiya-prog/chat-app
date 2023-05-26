@@ -12,7 +12,10 @@ if (test === 'long-polling') {
   mode = 'web-socket'
 }
 
-console.log(`Starting server in ${mode} mode...`)
+consola.ready({
+  message: `Starting server in ${mode} mode...`,
+  badge: true
+})
 
 const server = require(`./${mode}-server.js`);
 

@@ -26,11 +26,13 @@ export default createStore({
     addMessage (state, msg) {
       state.messages.push(msg)
     },
+    setMessages (state, msg) {
+      state.messages = [...state.messages, ...msg]
+    },
     clearData (state) {
       state.userName = ''
       state.userId = null
       state.messages = []
-      debugger
     }
   },
   actions: {
