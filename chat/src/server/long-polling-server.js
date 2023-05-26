@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 
 app.use(cors());
+app.use(express.json())
 
 let messages = [];
 const variants = ['Hello', 'Why?', 'How are you?', 'What happened?', 'Are you busy?']
@@ -28,11 +29,11 @@ app.get('/messages', (req, res) => {
 
 app.post('/messages', (req, res) => {
   const newMessage = req.body;
-  // newMessage.id = messages.length + 1;
+  console.log('alarm!!!', req.body);
+
+  newMessage.id = messages.length + 1;
   messages.push(newMessage);
   res.json(newMessage);
-  console.log(newMessage);
-  console.log(messages);
 });
 
 module.exports = app

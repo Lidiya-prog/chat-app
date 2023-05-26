@@ -37,11 +37,6 @@ const lastMessageId = ref(0)
 const exit = () => {
   router.push('/')
   store.commit('clearData')
-  // socket.disconnect()
-  // socket.emit('leftChat', () => {
-  //   debugger;
-  //
-  // })
 }
 
 onMounted(() => {
@@ -52,8 +47,10 @@ const getMessages = () => {
   axios.get('http://localhost:3000/messages', { params: { lastMessageId: lastMessageId.value } })
     .then(response => {
       const newMessages = response.data
+      debugger
       if (newMessages.length > 0) {
         store.commit('setMessages', newMessages)
+        debugger
         this.lastMessageId = newMessages[newMessages.length - 1].id
       }
       getMessages() // рекурсивный вызов для длинного опроса
@@ -65,7 +62,24 @@ const getMessages = () => {
 
 const send = (data) => {
   console.log(data)
-  axios.post('http://localhost:3000/messages', { text: data })
+
+  // axios.post('http://localhost:3000/messages', qs.stringify({ text: data }), {
+  //   headers: {
+  //     'Content-Type': 'application/x-www-form-urlencoded'
+  //   }
+  // })
+  //   .then(response => {
+  //     getMessages()
+  //   })
+  //   .catch(error => {
+  //     console.log(error)
+  //   })
+
+  axios({
+    method: 'post',
+    url: 'http://localhost:3000/messages',
+    data: { text: data }
+  })
     .then(response => {
       getMessages()
     })

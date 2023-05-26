@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="007a4bb7-10d7-4659-a024-2b14abd6465f" name="Changes" comment="add server mode">
-      <change afterPath="$PROJECT_DIR$/chat/src/components/ChatLongPolling.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat/src/components/ChatLongPollingForm.vue" afterDir="false" />
+    <list default="true" id="007a4bb7-10d7-4659-a024-2b14abd6465f" name="Changes" comment="add components for long-polling chat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/components/ChatWebSocketForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/ChatWebSocketForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/components/ChatLongPolling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/ChatLongPolling.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/src/server/long-polling-server.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/long-polling-server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/views/ChatView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/views/ChatView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +50,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685100804969</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add components for long-polling chat">
+      <created>1685105971112</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685105971112</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -67,7 +71,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="add-mode" />
+                        <option value="add-long-polling" />
                       </list>
                     </value>
                   </entry>
@@ -81,6 +85,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add server mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="add server mode" />
+    <MESSAGE value="add components for long-polling chat" />
+    <option name="LAST_COMMIT_MESSAGE" value="add components for long-polling chat" />
   </component>
 </project>
