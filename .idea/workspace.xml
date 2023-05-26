@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="007a4bb7-10d7-4659-a024-2b14abd6465f" name="Changes" comment="add components for long-polling chat">
+    <list default="true" id="007a4bb7-10d7-4659-a024-2b14abd6465f" name="Changes" comment="change axios request">
+      <change afterPath="$PROJECT_DIR$/chat/src/components/ChatPolling.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat/src/server/polling-server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/components/ChatLongPolling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/ChatLongPolling.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/components/ChatLongPollingForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/ChatLongPollingForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/src/server/long-polling-server.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/long-polling-server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/views/ChatView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/views/ChatView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/views/ChatsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/views/ChatsView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,15 +34,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;/Users/lidiya/Documents/Программирование/Frontend/chat-app/chat/src/components&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "/Users/lidiya/Documents/Программирование/Frontend/chat-app/chat/src/components",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/chat/src/components" />
+      <recent name="$PROJECT_DIR$/chat/src/server" />
       <recent name="$PROJECT_DIR$/chat/src/views" />
     </key>
   </component>
@@ -57,7 +62,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685105971112</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="change axios request">
+      <created>1685109983407</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685109983407</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,6 +98,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add server mode" />
     <MESSAGE value="add components for long-polling chat" />
-    <option name="LAST_COMMIT_MESSAGE" value="add components for long-polling chat" />
+    <MESSAGE value="change axios request" />
+    <option name="LAST_COMMIT_MESSAGE" value="change axios request" />
   </component>
 </project>
