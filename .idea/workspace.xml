@@ -2,20 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="007a4bb7-10d7-4659-a024-2b14abd6465f" name="Changes" comment="add server mode">
-      <change afterPath="$PROJECT_DIR$/chat/src/components/ChatWebSocket.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat/src/views/ChatsView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat/src/components/ChatLongPolling.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat/src/components/ChatLongPollingForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/components/ChatForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/ChatWebSocketForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/components/LoginForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/LoginForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/server/web-socket-server.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/web-socket-server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/components/ChatWebSocketForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/ChatWebSocketForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/src/server/long-polling-server.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/long-polling-server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/src/views/ChatView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/views/ChatView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="add-mode" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -26,12 +33,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "/Users/lidiya/Documents/Программирование/Frontend/chat-app/chat/src/components",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;/Users/lidiya/Documents/Программирование/Frontend/chat-app/chat/src/components&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/chat/src/components" />

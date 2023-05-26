@@ -5,6 +5,7 @@
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 import ChatWebSocket from '@/components/ChatWebSocket'
+import ChatLongPolling from '@/components/ChatLongPolling'
 
 const router = useRouter()
 const currentRoute = router.currentRoute.value.fullPath
@@ -16,9 +17,9 @@ function getTab () {
     tab.value = ChatWebSocket
   }
   if (currentRoute === '/long-polling') {
-    tab.value = ChatWebSocket
+    tab.value = ChatLongPolling
   }
-  tab.value = ChatWebSocket
+  tab.value = ChatLongPolling
 }
 getTab()
 </script>

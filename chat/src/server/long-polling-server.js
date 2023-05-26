@@ -14,6 +14,7 @@ function getRandomArbitrary (min = 0, max = 4) {
 app.use(express.static(__dirname + '/public'));
 
 app.get('/messages', (req, res) => {
+  console.log(messages)
   const lastMessageId = req.query.lastMessageId;
   const newMessages = messages.filter(message => message.id > lastMessageId);
   if (newMessages.length > 0) {
@@ -30,6 +31,8 @@ app.post('/messages', (req, res) => {
   // newMessage.id = messages.length + 1;
   messages.push(newMessage);
   res.json(newMessage);
+  console.log(newMessage);
+  console.log(messages);
 });
 
 module.exports = app
