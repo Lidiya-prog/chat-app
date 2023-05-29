@@ -1,15 +1,11 @@
 <template>
   <div>
-    <div v-if="name === 'admin'" class="system">
-      <p class="text-xs-center">{{props.text}}</p>
-      <hr>
-    </div>
-    <div v-else class="wrap">
-      <div class="mes">
+    <div class="wrap">
+      <div class="mes" :class="{owner}">
         <small>
-          <strong>{{name}}</strong>
+          <strong>{{props.name}}</strong>
         </small>
-        <p>{{text}}</p>
+        <p>{{props.text}}</p>
       </div>
     </div>
   </div>
@@ -19,7 +15,12 @@
 import { defineProps } from 'vue'
 
 const props = defineProps({
-  text: String
+  name: String,
+  text: String,
+  owner: {
+    type: Boolean,
+    default: false
+  }
 })
 </script>
 
@@ -37,19 +38,22 @@ const props = defineProps({
 }
 .mes {
   padding: 1rem;
-  width: 60%;
+  width: 40%;
   margin: 0 1rem;
   box-shadow: 0 1px 0 0 rgba(50, 50, 50, 0.3);
   border-radius: 4px;
   background: #1976d2;
   position: relative;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   p {
     margin-bottom: 0;
   }
 }
 .owner {
-  background: #ffffff;
+  background: #f6f2f2;
   color: #000000;
   align-self: flex-end;
 }

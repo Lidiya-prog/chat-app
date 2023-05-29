@@ -1,35 +1,37 @@
 <template>
-  <div class="c-wrap">
-    <div class="c-chat">
-      <Message
-        v-for="m in messages"
-        :key="m.text"
-        :name="m.name"
-        :text="m.text"
-      />
-    </div>
-    <div class="c-form">
-      <ChatForm/>
-    </div>
-  </div>
+    <component :is="tab"/>
 </template>
 <script setup>
-import Message from '@/components/Message.vue'
-import ChatForm from '@/components/ChatForm.vue'
+import { useRouter } from 'vue-router'
+import { ref, defineAsyncComponent } from 'vue'
 
-import { ref } from 'vue'
+const router = useRouter()
+const currentRoute = router.currentRoute.value.fullPath
 
-const messages = ref([
-  {
-    name: '1',
-    text: 'hello'
-  },
-  {
-    name: '2',
-    text: 'hello'
+const ChatWebSocket = defineAsyncComponent(() =>
+  import('@/components/ChatWebSocket')
+)
+const ChatLongPolling = defineAsyncComponent(() =>
+  import('@/components/ChatLongPolling')
+)
+const ChatPolling = defineAsyncComponent(() =>
+  import('@/components/ChatPolling')
+)
+
+const tab = ref(null)
+
+function getTab () {
+  if (currentRoute === '/ws') {
+    tab.value = ChatWebSocket
+    return
   }
-])
-
+  if (currentRoute === '/long-polling') {
+    tab.value = ChatLongPolling
+    return
+  }
+  tab.value = ChatPolling
+}
+getTab()
 </script>
 
 <style scoped>
@@ -45,15 +47,11 @@ const messages = ref([
   right: 0;
   padding: 1rem;
   height: 80px;
-  background: #212121;
+  /*background: #212121;*/
 }
 .c-chat {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 80px;
   padding: 1rem;
   overflow-y: auto;
+  height: 80%;
 }
 </style>

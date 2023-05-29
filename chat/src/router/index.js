@@ -8,9 +8,24 @@ const routes = [
     component: LoginView
   },
   {
-    path: '/chat',
-    name: 'chat',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ChatView.vue')
+    path: '/chats',
+    name: 'chats',
+    component: () => import('../views/ChatsView.vue')
+  },
+  {
+    path: '/ws',
+    name: 'ws',
+    component: () => import('../views/ChatView.vue')
+  },
+  {
+    path: '/long-polling',
+    name: 'longPolling',
+    component: () => import('../views/ChatView.vue')
+  },
+  {
+    path: '/polling',
+    name: 'polling',
+    component: () => import('../views/ChatView.vue')
   }
 ]
 

@@ -2,6 +2,15 @@
   <router-view/>
 </template>
 
+<script setup>
+// import socket from '@/socket'
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  // socket.connect()
+})
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
