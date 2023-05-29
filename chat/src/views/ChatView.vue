@@ -23,9 +23,11 @@ const tab = ref(null)
 function getTab () {
   if (currentRoute === '/ws') {
     tab.value = ChatWebSocket
+    return
   }
   if (currentRoute === '/long-polling') {
     tab.value = ChatLongPolling
+    return
   }
   tab.value = ChatPolling
 }

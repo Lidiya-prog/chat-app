@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="007a4bb7-10d7-4659-a024-2b14abd6465f" name="Changes" comment="remove unnecessary code, add polling chat component and polling server">
+    <list default="true" id="1a3ee133-1935-43e0-9851-3f9090909e8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/src/components/ChatLongPolling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/ChatLongPolling.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/src/components/ChatPolling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/ChatPolling.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/components/LoginForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/components/LoginForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/src/server/long-polling-server.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/long-polling-server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/server/polling-server.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/polling-server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/server/web-socket-server.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/server/web-socket-server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/src/views/ChatView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/views/ChatView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/src/views/ChatsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat/src/views/ChatsView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +31,26 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QSyFtF6oZfTOveL56dGNEXAp5C" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "/Users/lidiya/Documents/Программирование/Frontend/chat-app/chat/src/components",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/lidiya/Documents/Программирование/Frontend/chat-app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -51,6 +60,19 @@
       <recent name="$PROJECT_DIR$/chat/src/views" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="serve" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/chat/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="add server mode">
       <created>1685100804969</created>
@@ -80,8 +102,19 @@
       <option name="project" value="LOCAL" />
       <updated>1685129463196</updated>
     </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a3ee133-1935-43e0-9851-3f9090909e8c" name="Changes" comment="" />
+      <created>1685361177374</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685361177374</updated>
+      <workItem from="1685361178550" duration="1582000" />
+    </task>
     <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

@@ -33,8 +33,8 @@ const store = useStore()
 const messages = ref([])
 // const userName = store.getters.getUserName
 const lastMessageId = ref(0)
-const CancelToken = axios.CancelToken;
-const source = CancelToken.source();
+// const CancelToken = axios.CancelToken
+// const source = CancelToken.source()
 
 const exit = () => {
   router.push('/')
@@ -42,15 +42,16 @@ const exit = () => {
 }
 
 onMounted(() => {
-  debugger
+  // debugger
   getMessages()
 })
 
 const getMessages = () => {
-  debugger
-  axios.get('http://localhost:3000/messages', { params: { lastMessageId: lastMessageId.value }}, { cancelToken: source.token })
+  axios.get('http://localhost:3000/messages',
+    { params: { lastMessageId: lastMessageId.value } }
+    // { cancelToken: source.token }
+  )
     .then(async response => {
-      debugger
       const newMessages = await response.data
       if (newMessages.length > 0) {
         messages.value = [...messages.value, ...newMessages]
@@ -67,8 +68,7 @@ const send = (data) => {
   axios({
     method: 'post',
     url: 'http://localhost:3000/messages',
-    data: { text: data, owner: true },
-
+    data: { text: data, owner: true }
   })
     .then(response => {
       // getMessages()

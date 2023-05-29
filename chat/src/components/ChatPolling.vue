@@ -45,12 +45,9 @@ onMounted(() => {
 })
 
 const getMessages = () => {
-  debugger
   axios.get('http://localhost:3000/messages', { params: { lastMessageId: lastMessageId.value } })
     .then(response => {
-      debugger
       const newMessages = response.data
-      debugger
       if (newMessages.length > 0) {
         messages.value = [...messages.value, ...newMessages]
         lastMessageId.value = newMessages[newMessages.length - 1].id
