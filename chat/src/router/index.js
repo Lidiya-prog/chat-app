@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
-import ChatView from '../views/ChatView.vue'
 
 const routes = [
   {
@@ -11,27 +10,22 @@ const routes = [
   {
     path: '/chats',
     name: 'chats',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ChatsView.vue')
+    component: () => import('../views/ChatsView.vue')
   },
   {
     path: '/ws',
     name: 'ws',
-    component: ChatView
+    component: () => import('../views/ChatView.vue')
   },
   {
     path: '/long-polling',
     name: 'longPolling',
-    component: ChatView
+    component: () => import('../views/ChatView.vue')
   },
   {
     path: '/polling',
     name: 'polling',
-    component: ChatView
-  },
-  {
-    path: '/chat',
-    name: 'chat',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ChatView.vue')
+    component: () => import('../views/ChatView.vue')
   }
 ]
 

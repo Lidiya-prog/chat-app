@@ -1,5 +1,4 @@
 const consola = require('consola')
-// const app = require('express')()
 
 const args = process.argv.slice(2);
 const test = args.find(arg => arg.startsWith('--mode=')).split('=')[1];

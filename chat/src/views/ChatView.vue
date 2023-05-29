@@ -1,15 +1,22 @@
 <template>
-    <component :is="tab" />
+    <component :is="tab"/>
 </template>
 <script setup>
 import { useRouter } from 'vue-router'
-import { ref } from 'vue'
-import ChatWebSocket from '@/components/ChatWebSocket'
-import ChatLongPolling from '@/components/ChatLongPolling'
-import ChatPolling from '@/components/ChatPolling'
+import { ref, defineAsyncComponent } from 'vue'
 
 const router = useRouter()
 const currentRoute = router.currentRoute.value.fullPath
+
+const ChatWebSocket = defineAsyncComponent(() =>
+  import('@/components/ChatWebSocket')
+)
+const ChatLongPolling = defineAsyncComponent(() =>
+  import('@/components/ChatLongPolling')
+)
+const ChatPolling = defineAsyncComponent(() =>
+  import('@/components/ChatPolling')
+)
 
 const tab = ref(null)
 

@@ -12,7 +12,7 @@
         :key="m.text"
         :name="m.name"
         :text="m.text"
-        :owner="m.name === userName"
+        :owner="!!m.owner"
       />
     </div>
     <div class="c-form">
@@ -30,8 +30,7 @@ import { ref, onMounted } from 'vue'
 
 const router = useRouter()
 const store = useStore()
-const messages = store.getters.getMessages
-const userName = store.getters.getUserName
+const messages = ref([])
 const lastMessageId = ref(0)
 
 const exit = () => {
@@ -46,14 +45,15 @@ onMounted(() => {
 })
 
 const getMessages = () => {
+  debugger
   axios.get('http://localhost:3000/messages', { params: { lastMessageId: lastMessageId.value } })
     .then(response => {
+      debugger
       const newMessages = response.data
       debugger
       if (newMessages.length > 0) {
-        store.commit('setMessages', newMessages)
-        debugger
-        this.lastMessageId = newMessages[newMessages.length - 1].id
+        messages.value = [...messages.value, ...newMessages]
+        lastMessageId.value = newMessages[newMessages.length - 1].id
       }
     })
     .catch(error => {
@@ -62,24 +62,10 @@ const getMessages = () => {
 }
 
 const send = (data) => {
-  console.log(data)
-
-  // axios.post('http://localhost:3000/messages', qs.stringify({ text: data }), {
-  //   headers: {
-  //     'Content-Type': 'application/x-www-form-urlencoded'
-  //   }
-  // })
-  //   .then(response => {
-  //     getMessages()
-  //   })
-  //   .catch(error => {
-  //     console.log(error)
-  //   })
-
   axios({
     method: 'post',
     url: 'http://localhost:3000/messages',
-    data: { text: data }
+    data: { text: data, owner: true }
   })
     .then(response => {
       getMessages()

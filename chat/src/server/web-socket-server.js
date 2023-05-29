@@ -3,7 +3,7 @@ const server = require('http').createServer(webSocketServer)
 const { Server } = require('socket.io')
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:8081'
+    origin: 'http://localhost:8080'
   }
 })
 
@@ -50,14 +50,6 @@ io.on('connection', (socket) => {
   socket.on('leftChat', (cb) => {
     socket.disconnect()
     cb()
-    // if (!data) {
-    //   return cb('Имя не может быть пустым')
-    // }
-    //
-    // cb({ userId: socket.id })
-    // socket.emit('newMessage', {
-    //   text: `Hello ${data}`
-    // })
   })
 })
 
