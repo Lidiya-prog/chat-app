@@ -18,11 +18,13 @@
 import axios from 'axios'
 import Message from '@/components/Message.vue'
 import ChatLongPollingForm from '@/components/ChatLongPollingForm.vue'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, defineProps } from 'vue'
 
 const messages = ref([])
-// const userName = store.getters.getUserName
 const lastMessageId = ref(0)
+const props = defineProps({
+  name: String
+})
 // const CancelToken = axios.CancelToken
 // const source = CancelToken.source()
 //
@@ -57,7 +59,7 @@ const send = (data) => {
   axios({
     method: 'post',
     url: 'http://localhost:3000/messages',
-    data: { text: data, owner: true }
+    data: { text: data, owner: true, name: props.name }
   })
     .then(response => {
       // getMessages()

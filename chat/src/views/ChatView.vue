@@ -1,14 +1,17 @@
 <template>
   <Toolbar/>
-  <component :is="tab"/>
+  <component :is="tab" :name="userName"/>
 </template>
 <script setup>
 import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 import { ref, defineAsyncComponent } from 'vue'
 import Toolbar from '@/components/Toolbar'
 
 const router = useRouter()
 const currentRoute = router.currentRoute.value.fullPath
+const store = useStore()
+const userName = store.getters.getUserName
 
 const ChatWebSocket = defineAsyncComponent(() =>
   import('@/components/ChatWebSocket')

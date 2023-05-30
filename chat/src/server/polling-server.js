@@ -1,11 +1,11 @@
-const cors = require('cors');
-const express = require('express');
-const app = express();
+const cors = require('cors')
+const express = require('express')
+const app = express()
 
-app.use(cors());
+app.use(cors())
 app.use(express.json())
 
-const messages = [];
+const messages = []
 const greetVariants = ['hello', 'hi', 'hey']
 const answerVariants = ['I don`t understand you, sorry', 'Why?', 'How are you?', 'What happened?', 'Are you busy?']
 
@@ -15,37 +15,37 @@ function getRandomArbitrary (min = 0, max = 4) {
 
 app.get('/messages', (req, res) => {
   // res.json(messages);
-  const lastMessageId = req.query.lastMessageId;
-  const newMessages = messages.filter(message => message.id > lastMessageId);
+  const lastMessageId = req.query.lastMessageId
+  const newMessages = messages.filter(message => message.id > lastMessageId)
 
   if (newMessages.length > 0) {
-    res.json(newMessages);
+    res.json(newMessages)
   } else {
-    res.json([]);
+    res.json([])
   }
-});
+})
 
 app.post('/messages', (req, res) => {
-  const newMessage = req.body;
+  const newMessage = req.body
   const answerMessage = {
     text: '',
     owner: false
   }
 
-  newMessage.id = messages.length + 1;
-  messages.push(newMessage);
+  newMessage.id = messages.length + 1
+  messages.push(newMessage)
 
   setTimeout(() => {
     if (greetVariants.includes(newMessage.text.trim().toLowerCase())) {
-      answerMessage.text = 'Hi, user'
+      answerMessage.text = `Hi, ${newMessage.name}`
     } else {
       answerMessage.text = answerVariants[getRandomArbitrary()]
     }
-    answerMessage.id = messages.length + 1;
+    answerMessage.id = messages.length + 1
     messages.push(answerMessage)
   }, 2000)
 
-  res.sendStatus(200);
-});
+  res.sendStatus(200)
+})
 
 module.exports = app

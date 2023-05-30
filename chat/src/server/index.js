@@ -1,7 +1,7 @@
 const consola = require('consola')
 
-const args = process.argv.slice(2);
-const test = args.find(arg => arg.startsWith('--mode=')).split('=')[1];
+const args = process.argv.slice(2)
+const test = args.find(arg => arg.startsWith('--mode=')).split('=')[1]
 
 let mode = 'polling'
 
@@ -16,7 +16,7 @@ consola.ready({
   badge: true
 })
 
-const server = require(`./${mode}-server.js`);
+const server = require(`./${mode}-server.js`)
 
 const PORT = 3000
 

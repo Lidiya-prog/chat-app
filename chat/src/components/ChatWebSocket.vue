@@ -17,16 +17,19 @@
 <script setup>
 import Message from '@/components/Message.vue'
 import ChatWebSocketForm from '@/components/ChatWebSocketForm.vue'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, defineProps } from 'vue'
 import socket from '@/socket'
 
 // const userName = store.getters.getUserName
 const messages = ref([])
+const props = defineProps({
+  name: String
+})
 
 onMounted(() => {
   socket.connect()
 
-  socket.emit('userJoin', 'user', data => {
+  socket.emit('userJoin', props.name, data => {
     if (typeof data === 'string') {
       console.error(data)
     } else {
@@ -51,7 +54,8 @@ const send = (text) => {
     'createMessage',
     {
       text: text,
-      owner: true
+      owner: true,
+      name: props.name
     },
     data => {
       if (typeof data === 'string') {

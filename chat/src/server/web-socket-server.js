@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
   console.log(socket.connected)
 
   socket.on('createMessage', (data, func) => {
-    // console.log(data)
+    console.log(data)
     if (!data.text) {
       return func('Текст не может быть пустым')
     }
@@ -49,9 +49,9 @@ io.on('connection', (socket) => {
     }
 
     func({ userId: socket.id })
-    socket.emit('newMessage', {
-      text: `Hello ${data}`
-    })
+    // socket.emit('newMessage', {
+    //   text: `Hello ${data}`
+    // })
   })
   // socket.on('leftChat', () => {
   //   socket.disconnect()
