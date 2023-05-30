@@ -37,7 +37,7 @@ app.post('/messages', (req, res) => {
   messages.push(newMessage)
 
   if (greetVariants.includes(newMessage.text.trim().toLowerCase())) {
-    answerMessage.text = 'Hi, user'
+    answerMessage.text = `Hi, ${newMessage.name}`
   } else {
     answerMessage.text = answerVariants[getRandomArbitrary()]
   }

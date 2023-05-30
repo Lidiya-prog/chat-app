@@ -4,33 +4,18 @@
       label="Введите сообщение"
       outline
       v-model="text"
-      @keydown.enter="send"/>
+      @keydown.enter="sendMessage"/>
   </v-flex>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import socket from '@/socket'
-import { useStore } from 'vuex'
+import { ref, defineEmits } from 'vue'
 
 const text = ref('')
-const store = useStore()
-const name = store.getters.getUserName
+const emits = defineEmits(['send-message'])
 
-const send = () => {
-  console.log('send')
-  socket.emit(
-    'createMessage',
-    {
-      text: text.value,
-      name: name
-    },
-    data => {
-      if (typeof data === 'string') {
-        console.error(data)
-      } else {
-        text.value = ''
-      }
-    })
+const sendMessage = () => {
+  emits('send-message', text.value)
+  text.value = ''
 }
 </script>

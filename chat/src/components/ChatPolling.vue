@@ -1,11 +1,5 @@
 <template>
   <div class="c-wrap">
-    <v-toolbar app>
-      <v-btn @click="exit">
-        Выйти
-      </v-btn>
-      <v-toolbar-title>Чат</v-toolbar-title>
-    </v-toolbar>
     <div class="c-chat">
       <Message
         v-for="m in messages"
@@ -24,19 +18,13 @@
 import axios from 'axios'
 import Message from '@/components/Message.vue'
 import ChatLongPollingForm from '@/components/ChatLongPollingForm.vue'
-import { useRouter } from 'vue-router'
-import { useStore } from 'vuex'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, defineProps } from 'vue'
 
-const router = useRouter()
-const store = useStore()
 const messages = ref([])
 const lastMessageId = ref(0)
-
-const exit = () => {
-  router.push('/')
-  store.commit('clearData')
-}
+const props = defineProps({
+  name: String
+})
 
 onMounted(() => {
   setInterval(() => {
@@ -62,7 +50,7 @@ const send = (data) => {
   axios({
     method: 'post',
     url: 'http://localhost:3000/messages',
-    data: { text: data, owner: true }
+    data: { text: data, owner: true, name: props.name }
   })
     .then(response => {
       getMessages()
@@ -76,7 +64,7 @@ const send = (data) => {
 
 <style scoped>
 .c-wrap {
-  height: 100%;
+  height: calc(100% - 64px);
   position: relative;
   overflow: hidden;
 }

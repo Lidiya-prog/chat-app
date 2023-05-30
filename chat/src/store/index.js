@@ -3,15 +3,10 @@ import { createStore } from 'vuex'
 export default createStore({
   state: () => {
     return {
-      userName: '',
-      userId: null,
-      messages: []
+      userName: ''
     }
   },
   getters: {
-    getMessages (state) {
-      return state.messages
-    },
     getUserName (state) {
       return state.userName
     }
@@ -20,19 +15,8 @@ export default createStore({
     setUser (state, name) {
       state.userName = name
     },
-    setUserId (state, id) {
-      state.userId = id
-    },
-    addMessage (state, msg) {
-      state.messages.push(msg)
-    },
-    setMessages (state, msg) {
-      state.messages = [...state.messages, ...msg]
-    },
     clearData (state) {
       state.userName = ''
-      state.userId = null
-      state.messages = []
     }
   },
   actions: {

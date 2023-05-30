@@ -1,12 +1,17 @@
 <template>
-    <component :is="tab"/>
+  <Toolbar/>
+  <component :is="tab" :name="userName"/>
 </template>
 <script setup>
 import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 import { ref, defineAsyncComponent } from 'vue'
+import Toolbar from '@/components/Toolbar'
 
 const router = useRouter()
 const currentRoute = router.currentRoute.value.fullPath
+const store = useStore()
+const userName = store.getters.getUserName
 
 const ChatWebSocket = defineAsyncComponent(() =>
   import('@/components/ChatWebSocket')
@@ -33,25 +38,3 @@ function getTab () {
 }
 getTab()
 </script>
-
-<style scoped>
-.c-wrap {
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-.c-form {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem;
-  height: 80px;
-  /*background: #212121;*/
-}
-.c-chat {
-  padding: 1rem;
-  overflow-y: auto;
-  height: 80%;
-}
-</style>

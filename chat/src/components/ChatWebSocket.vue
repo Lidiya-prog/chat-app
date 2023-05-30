@@ -1,73 +1,66 @@
 <template>
 <div class="c-wrap">
-    <v-toolbar app>
-      <v-btn @click="exit">
-        Выйти
-      </v-btn>
-      <v-toolbar-title>Чат</v-toolbar-title>
-    </v-toolbar>
     <div class="c-chat">
       <Message
         v-for="m in messages"
         :key="m.text"
         :name="m.name"
         :text="m.text"
-        :owner="m.name === userName"
+        :owner="!!m.owner"
       />
     </div>
     <div class="c-form">
-      <ChatWebSocketForm/>
+      <ChatWebSocketForm @send-message="send"/>
     </div>
   </div>
 </template>
 <script setup>
 import Message from '@/components/Message.vue'
 import ChatWebSocketForm from '@/components/ChatWebSocketForm.vue'
-import { useRouter } from 'vue-router'
-import { useStore } from 'vuex'
-import { onMounted } from 'vue'
+import { onMounted, ref, defineProps } from 'vue'
 import socket from '@/socket'
 
-const router = useRouter()
-const store = useStore()
-const messages = store.getters.getMessages
-const userName = store.getters.getUserName
-
-const exit = () => {
-  router.push('/')
-  store.commit('clearData')
-  socket.disconnect()
-  // socket.emit('leftChat', () => {
-  //   debugger;
-  //
-  // })
-}
+const messages = ref([])
+const props = defineProps({
+  name: String
+})
 
 onMounted(() => {
   socket.connect()
 
-  socket.emit('userJoin', userName, data => {
+  socket.emit('userJoin', props.name, data => {
     if (typeof data === 'string') {
       console.error(data)
-    } else {
-      store.commit('setUser', userName.value)
-      store.commit('setUserId', data.userId)
-      router.push({ name: 'chat', params: { userName: userName.value } })
     }
   })
 })
 
 socket.on('newMessage', data => {
   if (data) {
-    store.commit('addMessage', data)
+    messages.value = [...messages.value, data]
   }
 })
 
+const send = (text) => {
+  debugger
+  socket.emit(
+    'createMessage',
+    {
+      text: text,
+      owner: true,
+      name: props.name
+    },
+    data => {
+      if (typeof data === 'string') {
+        console.error(data)
+      }
+    })
+}
 </script>
 
 <style scoped>
 .c-wrap {
-  height: 100%;
+  height: calc(100% - 64px);
   position: relative;
   overflow: hidden;
 }
