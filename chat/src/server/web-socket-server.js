@@ -2,12 +2,14 @@ const webSocketServer = require('express')()
 const server = require('http').createServer(webSocketServer)
 const { Server } = require('socket.io')
 const io = new Server(server, {
+  autoConnect: false,
   cors: {
     origin: 'http://localhost:8080'
   }
 })
 
-const variants = ['Hello', 'Why?', 'How are you?', 'What happened?', 'Are you busy?']
+const greetVariants = ['hello', 'hi', 'hey']
+const answerVariants = ['I don`t understand you, sorry', 'Why?', 'How are you?', 'What happened?', 'Are you busy?']
 
 function getRandomArbitrary (min = 0, max = 4) {
   return Math.floor(Math.random() * (max - min) + min)
@@ -16,19 +18,23 @@ function getRandomArbitrary (min = 0, max = 4) {
 io.on('connection', (socket) => {
   console.log('a user connected')
 
-  socket.on('createMessage', (data, cb) => {
+  console.log(socket.connected)
+
+  socket.on('createMessage', (data, func) => {
     // console.log(data)
     if (!data.text) {
-      return cb('Текст не может быть пустым')
+      return func('Текст не может быть пустым')
     }
 
     io.emit('newMessage', {
       text: data.text,
-      name: data.name
+      owner: data.owner
     })
-    cb()
+    func()
 
-    const newMessage = data.text === variants[0] ? variants[2] : variants[getRandomArbitrary()]
+    const newMessage = greetVariants.includes(data.text.trim().toLowerCase())
+      ? `Hello ${data.name}`
+      : answerVariants[getRandomArbitrary()]
     setTimeout(() => {
       socket.emit('newMessage', {
         text: newMessage
@@ -36,21 +42,20 @@ io.on('connection', (socket) => {
     }, 1000)
   })
 
-  socket.on('userJoin', (data, cb) => {
-    // console.log(data)
+  socket.on('userJoin', (data, func) => {
+    console.log(data)
     if (!data) {
-      return cb('Имя не может быть пустым')
+      return func('Имя не может быть пустым')
     }
 
-    cb({ userId: socket.id })
+    func({ userId: socket.id })
     socket.emit('newMessage', {
       text: `Hello ${data}`
     })
   })
-  socket.on('leftChat', (cb) => {
-    socket.disconnect()
-    cb()
-  })
+  // socket.on('leftChat', () => {
+  //   socket.disconnect()
+  // })
 })
 
 module.exports = server
