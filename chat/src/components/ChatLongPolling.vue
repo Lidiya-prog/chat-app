@@ -27,11 +27,6 @@ const props = defineProps({
 })
 // const CancelToken = axios.CancelToken
 // const source = CancelToken.source()
-//
-// const exit = () => {
-//   router.go(-1)
-//   store.commit('clearData')
-// }
 
 onMounted(() => {
   getMessages()

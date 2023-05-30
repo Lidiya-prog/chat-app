@@ -20,7 +20,6 @@ import ChatWebSocketForm from '@/components/ChatWebSocketForm.vue'
 import { onMounted, ref, defineProps } from 'vue'
 import socket from '@/socket'
 
-// const userName = store.getters.getUserName
 const messages = ref([])
 const props = defineProps({
   name: String
@@ -32,23 +31,17 @@ onMounted(() => {
   socket.emit('userJoin', props.name, data => {
     if (typeof data === 'string') {
       console.error(data)
-    } else {
-      // store.commit('setUser', userName.value)
-      // store.commit('setUserId', data.userId)
-      // router.push({ name: 'chat', params: { userName: userName.value } })
     }
   })
 })
 
 socket.on('newMessage', data => {
   if (data) {
-    // store.commit('addMessage', data)
     messages.value = [...messages.value, data]
   }
 })
 
 const send = (text) => {
-  // console.log('send')
   debugger
   socket.emit(
     'createMessage',

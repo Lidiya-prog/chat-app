@@ -14,7 +14,6 @@ function getRandomArbitrary (min = 0, max = 4) {
 }
 
 app.get('/messages', (req, res) => {
-  // res.json(messages);
   const lastMessageId = req.query.lastMessageId
   const newMessages = messages.filter(message => message.id > lastMessageId)
 
